@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wind Course Employement System</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static "register/bootstrap/css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "register/fontawesome/css/all.min.css" %}">
+</head>
+<body>
+    <div class="container">
+        <div class="col-md-10 offset-md-1 mt-5">
+            <div class="jumbotron">
+                <h1 class="display-4">Wind Course</h1>
+                <p class="lead font-italic">New lecturer registration form</p>
+                <hr class="my-4">
+                {% block content %}
+                {% endblock content %}
+            </div>    
+        </div>
+    </div>
+    <script src="{% static "register/bootstrap/js/bootstrap.min.js" %}"></script>
+    <script src="{% static "register/js/jquery-3.4.1.js" %}"></script>
+    <script src="{% static "register/popper/popper.js" %}"></script>
+</body>
+</html>
