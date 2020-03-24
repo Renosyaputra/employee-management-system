@@ -2,7 +2,7 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-    <form action="" method="post" autocomplete="off"> 
+    <form action="" method="post" autocomplete="off" enctype="multipart/form-data"> 
         {% csrf_token %}
         {{ form.fullname|as_crispy_field }}
         {{ form.mobile|as_crispy_field }}
@@ -14,6 +14,18 @@
                 {{ form.position|as_crispy_field }}
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-6">
+                {{ form.profil_picture|as_crispy_field }}
+            </div>
+            <div class="col-md-6">
+                {{ form.cv_file|as_crispy_field }}
+            </div>
+        </div>
+        <br>
+    <div class="col-md-12 text-center">
         <button type="submit" class="btn btn-primary"><i class="fas fa-fw fa-paper-plane"></i> Submit</button>
     </form>
+        <a href="{% url 'employee_list' %}" class="btn btn-success"><i class="fas fa-fw fa-list"></i> Added List</a>
+    </div>
 {% endblock content %}

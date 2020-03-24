@@ -16,13 +16,24 @@
                 <td>{{employee.mobile}}</td>
                 <td>{{employee.position}}</td>
                 <td>
-                    <a href="{% url 'employee_update' employee.id %}" class="btn text-secondary px-0">
-                        <i class="fas fa-fw fa-edit fa-lg"></i>
+                    <a href="{% url 'employee_detail' employee.id %}" class="btn btn-success">
+                        <i class="fas fa-fw fa-user "></i>
                     </a>
+                    <a href="{% url 'employee_update' employee.id %}" class="btn btn-primary">
+                        <i class="fas fa-fw fa-edit "></i>
+                    </a>
+                    <form action="{% url 'employee_delete' employee.id %}" method="post" class="d-inline">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger">
+                            <i class="fas fa-fw fa-trash"></i>
+                        </button>
+                    </form>
                 </td>
             </tr>
           {% endfor %}
       </tbody>
   </table>
-  
+  <div class="col-md-12 text-center">
+    <a href="{% url 'employee_insert' %}" class="btn btn-success"><i class="fas fa-fw fa-plus"></i> Add New</a>
+  </div>
 {% endblock content %}

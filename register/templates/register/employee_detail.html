@@ -1,0 +1,47 @@
+{% extends "register/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <p class="lead">Profile Picture</p>
+            {% if employee.profil_picture %}
+                <img class="rounded-circle" src="{{ employee.profil_picture.url }}" alt="not loaded" width="50%">
+            {% else %}
+                <img class="rounded-circle" src="/media/profil/default.jpg" alt="not loaded" width="50%">
+            {% endif %}
+        </div>
+        <div class="col-md-6 text-center">
+            <p class="lead">CV</p>
+            {% if employee.cv_file %}
+                <h1><i class="fas fa-file-pdf fa-3x m-3" style="color:#00ced1"></i></h1> 
+                <input class="btn btn-success" type="button" value="Download" onclick="window.open('{{ employee.cv_file.url }}')">
+            {% else %}
+                <h1><i class="fas fa-file-pdf fa-4x mt-3" style="color: #ccc;"></i></h1>  
+            {% endif %}
+        </div>
+        <div class="col-md-12 mt-5">
+            <table class="table table-borderless">
+                <thead class="border-bottom font-weight-bold">
+                    <td>Full Name</td>
+                    <td>Registration No.</td>
+                    <td>Mobile</td>
+                    <td>Position</td>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{employee.fullname}}</td>
+                        <td>{{employee.emp_code}}</td>
+                        <td>{{employee.mobile}}</td>
+                        <td>{{employee.position}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-12 text-center">
+            <a href="{% url 'employee_update' employee.id %}" class="btn btn-primary">
+                <i class="fas fa-fw fa-edit "></i> Edit
+            </a>
+        </div>
+    </div>
+{% endblock content %}

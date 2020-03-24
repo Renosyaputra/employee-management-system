@@ -1,0 +1,23 @@
+body{
+    background-color: #3D2739;
+}
+
+.btn-primary{
+    background-color: #f1ad85;
+    border-color: #f1ad85;
+}
+
+.btn-primary:hover{
+    background-color: #C39797;
+    border-color: #C39797;
+}
+
+.btn-success{
+    background-color: #00ced1;
+    border-color: #00ced1;
+} 
+
+.btn-success:hover{
+    background-color: #20b2aa;
+    border-color: #20b2aa;
+}
