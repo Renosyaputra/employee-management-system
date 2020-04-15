@@ -2,7 +2,7 @@
 
 This is a prototype of employee management system which simplifies company to manage new employees by registering them online. 
 
-What can be done in this project are:
+What you can do in this project are:
 1. Registering new employee credentials
 2. Storing photo & CV
 3. Showing the existing list of registered employees
